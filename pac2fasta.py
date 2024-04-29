@@ -46,8 +46,8 @@ with open(index_amb, 'r') as f:
 
 with open(index_pac, 'br') as f:
     bs = f.read()
-    binary_string = bin(int(bs.hex(), 16))
-    bss = binary_string[2:]
+    binary_str_array = [ bin(bi)[2:].rjust(8,'0') for bi in bs ]
+    bss = "".join( binary_str_array )
 
 base_dict = {"11": "T", "01": "C", "10": "G", "00": "A"}
 
