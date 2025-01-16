@@ -27,7 +27,8 @@ with open(index_ann, 'r') as f:
             break
         _l1 = line1.strip().split()
         _l2 = line2.strip().split()
-        _gi, _name, _anno, _offset, _len, _amb_num = _l1+_l2
+        _gi, _name, _anno = _l1[0], _l1[1], " ".join( _l1[2:] )
+        _offset, _len, _amb_num = _l2
         _offset = int(_offset)
         _len = int(_len)
         _amb_num = int(_amb_num)
